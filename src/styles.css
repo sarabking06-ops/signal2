@@ -1,0 +1,72 @@
+@import "@fontsource/vazirmatn/400.css";
+@import "@fontsource/vazirmatn/500.css";
+@import "@fontsource/vazirmatn/600.css";
+@import "@fontsource/vazirmatn/700.css";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  --color-bg: #121614;
+  --color-raised: #191e1b;
+  --color-surface: #202722;
+  --color-surface-2: #2a332c;
+  --color-line: #3a463d;
+  --color-fg: #e7f0e6;
+  --color-muted: #9aab9d;
+  --color-faint: #738276;
+  --color-buy: #3f9d78;
+  --color-buy-soft: #17352b;
+  --color-sell: #d16b59;
+  --color-sell-soft: #3c2420;
+  --color-accent: #e0b15a;
+  --color-accent-soft: #3c331d;
+  --radius-card: 0.9rem;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+
+  button,
+  input,
+  summary {
+    font: inherit;
+    color: inherit;
+  }
+
+  button {
+    background: transparent;
+    border: 0;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-fg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
